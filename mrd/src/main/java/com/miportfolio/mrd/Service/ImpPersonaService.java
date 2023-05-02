@@ -9,9 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ImpPersonaService implements IPersonaService {
+public class ImpPersonaService implements IPersonaService{
     @Autowired IPersonaRepository ipersonarepository;
-    
     @Override
     public List<Persona> getPersonas() {
        List<Persona> personas = ipersonarepository.findAll();
@@ -20,7 +19,7 @@ public class ImpPersonaService implements IPersonaService {
 
     @Override
     public void savePersona(Persona persona) {
-       ipersonarepository.save(persona);
+        ipersonarepository.save(persona);
     }
 
     @Override
@@ -30,8 +29,8 @@ public class ImpPersonaService implements IPersonaService {
 
     @Override
     public Persona findPersona(Long id) {
-      Persona persona = ipersonarepository.findById(id).orElse(null);
-      return persona;
+        Persona persona = ipersonarepository.findById(id).orElse(null);
+        return persona;
     }
     
 }
